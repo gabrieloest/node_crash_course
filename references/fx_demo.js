@@ -29,3 +29,17 @@ fs.readFile(path.join(__dirname, '/test', 'hello.txt'), path.join(__dirname, '/t
 	if(err) throw err;
 	console.log('File renamed');
 });
+
+// Read file with stream
+var fs = require('fs');
+const path = require('path');
+
+var data = '';
+
+var readStream = fs.createReadStream(path.join(__dirname, '/Node-stream-handson', 'data_file.txt'), 'utf8');
+
+readStream.on('data', function(chunk) {  
+    data += chunk;
+}).on('end', function() {
+    console.log(data);
+});

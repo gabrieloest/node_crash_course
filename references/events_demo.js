@@ -5,7 +5,7 @@ class MyEmitter extend EventEmmiter {}
 
 
 // Init object
-const myEmitter = new MyEmitter()'
+const myEmitter = new MyEmitter();
 
 // Event listener
 myEmitter.on('event', () => console.log('Event Fired!'));
